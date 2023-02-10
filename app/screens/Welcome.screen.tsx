@@ -1,36 +1,43 @@
 import {ImageBackground, StyleSheet, View, Image, Text} from 'react-native';
 import React from 'react';
+import CustomButton from '../components/CustomButton';
+import colors from '../config/colors';
 
 const WelcomeScreen = () => {
   return (
     <ImageBackground
-      source={require('../assets/background.jpg')}
-      style={styles.background}>
+      blurRadius={10}
+      style={styles.background}
+      source={require('../assets/background.jpg')}>
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require('../assets/logo-red.png')} />
-        <Text>Sell What You Don't Need</Text>
+        <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.loginButton}>
-        <Text>login</Text>
-      </View>
-      <View style={styles.registerButton}>
-        <Text>register</Text>
+      <View style={styles.buttonsContainer}>
+        <CustomButton
+          title="Login"
+          color={colors.primary}
+          onPress={() => console.log('pressed reg')}
+        />
+        <CustomButton
+          title="Register"
+          color={colors.secondary}
+          onPress={() => console.log('pressed reg')}
+        />
       </View>
     </ImageBackground>
   );
 };
 const styles = StyleSheet.create({
   background: {
-    display: 'flex',
+    // flex: 1,
     height: '100%',
-    // flex: 1, // if this us enable the button do not show investigate later
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  loginButton: {
+  buttonsContainer: {
+    padding: 20,
     width: '100%',
-    height: 70,
-    backgroundColor: '#fc5c65',
   },
   logo: {
     width: 100,
@@ -41,10 +48,10 @@ const styles = StyleSheet.create({
     top: 70,
     alignItems: 'center',
   },
-  registerButton: {
-    width: '100%',
-    height: 70,
-    backgroundColor: '#4ecdc4',
+  tagline: {
+    fontSize: 25,
+    fontWeight: '600',
+    paddingVertical: 20,
   },
 });
 export default WelcomeScreen;
