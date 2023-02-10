@@ -25,6 +25,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import WelcomeScreen from './app/screens/Welcome.screen';
+import ViewImageScreen from './app/screens/View.screen';
+import DemoScreens from './app/screens/Demo.screens';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -43,10 +46,9 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <View>
-        <Text>this is only way</Text>
-        {/* <Image  source={{}}/> */}
-      </View>
+      {/* <WelcomeScreen /> */}
+      {/* <ViewImageScreen /> */}
+      <DemoScreens />
     </SafeAreaView>
   );
 }
