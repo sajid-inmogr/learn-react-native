@@ -28,6 +28,7 @@ import {
 import WelcomeScreen from './app/screens/Welcome.screen';
 import ViewImageScreen from './app/screens/View.screen';
 import DemoScreens from './app/screens/Demo.screens';
+import ListingDetailsScreen from './app/screens/ListingDetails.screen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -46,9 +47,10 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
       {/* <ViewImageScreen /> */}
       {/* <DemoScreens /> */}
+      <ListingDetailsScreen />
     </SafeAreaView>
   );
 }
