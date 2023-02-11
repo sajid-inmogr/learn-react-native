@@ -5,7 +5,6 @@ import Card from '../components/Card';
 const ListingDetailsScreen = () => {
   return (
     <View>
-      {' '}
       <Card
         image={require('../assets/jacket.jpg')}
         title="something title"
