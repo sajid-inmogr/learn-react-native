@@ -48,9 +48,9 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       {/* <WelcomeScreen /> */}
-      {/* <ViewImageScreen /> */}
+      <ViewImageScreen />
       {/* <DemoScreens /> */}
-      <ListingDetailsScreen />
+      {/* <ListingDetailsScreen /> */}
     </SafeAreaView>
   );
 }
