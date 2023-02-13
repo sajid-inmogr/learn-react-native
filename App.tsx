@@ -29,6 +29,8 @@ import WelcomeScreen from './app/screens/Welcome.screen';
 import ViewImageScreen from './app/screens/View.screen';
 import DemoScreens from './app/screens/Demo.screens';
 import ListingDetailsScreen from './app/screens/ListingDetails.screen';
+import MessagesScreen from './app/screens/Messages.screen';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -42,16 +44,19 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
-      {/* <DemoScreens /> */}
-      {/* <ListingDetailsScreen /> */}
-    </SafeAreaView>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        {/* <WelcomeScreen /> */}
+        {/* <ViewImageScreen /> */}
+        {/* <DemoScreens /> */}
+        {/* <ListingDetailsScreen /> */}
+        <MessagesScreen />
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 }
 

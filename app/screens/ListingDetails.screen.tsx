@@ -16,6 +16,7 @@ const ListingDetailsScreen = () => {
           image={require('../assets/mosh.jpg')}
           title="Mosh Hamedani"
           subTitle="5 Listings"
+          onPress={() => {}}
         />
       </View>
     </View>
