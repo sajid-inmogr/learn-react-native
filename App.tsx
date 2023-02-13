@@ -33,6 +33,7 @@ import MessagesScreen from './app/screens/Messages.screen';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import AccountScreen from './app/screens/Accounts.Screen';
 import ListingScreen from './app/screens/Listing.screen';
+import PickerScreen from './app/screens/Picker.screen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -54,10 +55,11 @@ function App(): JSX.Element {
         />
         {/* <WelcomeScreen /> */}
         {/* <ViewImageScreen /> */}
-        <ListingScreen />
+        {/* <ListingScreen /> */}
         {/* <ListingDetailsScreen /> */}
         {/* <MessagesScreen /> */}
         {/* <AccountScreen /> */}
+        <PickerScreen />
       </SafeAreaView>
     </GestureHandlerRootView>
   );
