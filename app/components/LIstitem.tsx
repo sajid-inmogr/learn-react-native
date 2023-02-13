@@ -12,15 +12,17 @@ import colors from '../config/colors';
 
 interface IListItemCompProps {
   title: string;
-  subTitle: string;
-  image: ImageSourcePropType;
-  onPress: () => void;
+  subTitle?: string;
+  image?: ImageSourcePropType;
+  onPress?: () => void;
   renderRightActions?: any;
+  IconComponent?: any;
 }
 const ListItem: React.FC<IListItemCompProps> = ({
   title,
   subTitle,
   image,
+  IconComponent,
   onPress,
   renderRightActions,
 }) => {
@@ -28,10 +30,11 @@ const ListItem: React.FC<IListItemCompProps> = ({
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={styles.container}>
-          <Image style={styles.image} source={image} />
-          <View>
+          {image && <Image style={styles.image} source={image} />}
+          {IconComponent}
+          <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
-            <AppText style={styles.subTitle}>{subTitle}</AppText>
+            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
         </View>
       </TouchableHighlight>
@@ -53,6 +56,10 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     color: colors.medium,
+  },
+  detailsContainer: {
+    marginLeft: 10,
+    justifyContent: 'center',
   },
   title: {
     fontWeight: '500',
